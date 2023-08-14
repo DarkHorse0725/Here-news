@@ -1,0 +1,15 @@
+env: standard
+
+runtime: nodejs16
+service: default
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+
+manual_scaling:
+  instances: 1
+
+network:
+  session_affinity: true

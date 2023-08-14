@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.row {
+  @apply flex flex-row;
+}
+
+.col {
+  @apply flex flex-col;
+}
+
+.centerAll {
+  @apply justify-center items-center;
+}
+
+/* Typography classes */
+
+.text-h1 {
+  @apply text-5xl lg:text-6xl xl:text-7xl leading-[1.2em];
+}
+
+.text-h2 {
+  @apply text-4xl lg:text-5xl xl:text-[56px] leading-[1.2em];
+}
+
+.text-h3 {
+  @apply text-3xl lg:text-4xl xl:text-5xl leading-[1.2em];
+}
+
+.text-subtitle {
+  @apply text-xl lg:text-2xl xl:text-[32px] leading-[1.2em];
+}
+
+.text-subtitle-2 {
+  @apply text-lg lg:text-xl xl:text-2xl leading-[1.4em];
+}
+
+.text-subtitle-small {
+  @apply text-base lg:text-lg xl:text-xl leading-[1.6em];
+}
+
+.text-body {
+  @apply text-xs lg:text-sm xl:text-base leading-[1.2em];
+}
+
+.text-light-italic {
+  @apply text-xs lg:text-sm xl:text-base leading-[1.2em];
+  font-style: italic;
+}
+
+.text-small {
+  @apply text-xs xl:text-sm leading-[1.2em];
+}
+
+.text-bold {
+  @apply text-xs xl:text-sm leading-[1.2em];
+  font-weight: bold;
+}
+
+.text-link {
+  @apply text-xs lg:text-sm xl:text-base underline leading-[1.2em];
+}
+
+.text-link-small {
+  @apply text-[8px] lg:text-[10px] xl:text-[11px];
+}
+
+.text-button {
+  @apply text-xs lg:text-sm xl:text-base;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #f9fafb;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  animation: marquee 15s linear infinite;
+}
+
+.trending {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  gap: 24px;
+  width: auto;
+}
+.trending_column {
+  background-clip: padding-box;
+  overflow: hidden;
+}
+
+.search {
+  gap: 16px;
+}
+
+a {
+  @apply text-here-purple-900 underline underline-offset-2;
+}
+
+/* 
+  We are dangerously setting inner html for displaying post, the content
+  inside that has no styles, to address apply this post class where we
+  dangerously set inner html
+*/
+.post h1 {
+  @apply antialiased text-[24px] font-[500] mb-4 break-words text-[#213642] leading-[38.4px];
+}
+.post h2 {
+  @apply text-[18px] font-bold mb-2 break-words text-[#213642];
+}
+.post strong {
+  @apply antialiased text-[24px] font-[500] mb-4 break-words text-[#213642] leading-[38.4px];
+}
+.post a {
+  @apply break-all;
+}
+.post ul {
+  @apply list-disc ml-8 py-4;
+}
+.post p {
+  @apply antialiased text-ellipsis font-[400] text-xs lg:text-base overflow-hidden leading-[160%] text-[#5A6B74];
+}
+
+.explore-post h1 {
+  @apply text-[20px] font-medium mb-2 break-words text-[#213642] leading-[140%];
+}
+.explore-post h2 {
+  @apply text-[14px] font-bold mb-2 break-words text-[#213642];
+}
+.explore-post p {
+  @apply antialiased text-ellipsis font-[400] text-xs lg:text-base overflow-hidden leading-[160%] text-[#5A6B74];
+}
+.explore-post strong {
+  @apply antialiased text-ellipsis font-[500] overflow-hidden text-[#213642] text-base lg:text-[20px] leading-[140%];
+}
+
+.explore-post a {
+  @apply break-all;
+}
+.explore-post ul {
+  @apply list-disc ml-8 py-4;
+}
+.border-bottom-red {
+  border-bottom: 1px solid red;
+}
+
+/* check box css */
+
+input[type='checkbox'] {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  appearance: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #213642;
+  transition: all 0.3s;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  border: solid #213642;
+  display: block;
+  width: 0.4em;
+  height: 0.6em;
+  border-width: 0 2.5px 2.5px 0;
+  z-index: 1;
+  opacity: 0;
+  left: 0.25rem;
+  top: 0.07rem;
+  transform: rotate(0deg);
+}
+
+input[type='checkbox']:checked {
+  background-color: #fff;
+}
+
+input[type='checkbox']:checked::before {
+  opacity: 1;
+  transform: rotate(405deg);
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 48px #f9fafb inset;
+  -webkit-box-shadow: 0 0 0 48px #f9fafb inset;
+}
+
+div.authoringViewModal::-webkit-scrollbar {
+  width: 7px;
+  height: 0;
+}
+
+div.authoringViewModal::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 1px;
+}
+
+div.authoringViewModal:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+div.authoringViewModal::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* For hiding arrows in input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

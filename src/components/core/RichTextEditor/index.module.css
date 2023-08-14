@@ -1,0 +1,31 @@
+.editor h2 {
+  @apply font-medium leading-7 text-xl text-header;
+}
+
+.editor p {
+  @apply text-base text-body leading-[1.625rem];
+}
+
+.editor li {
+  @apply !list-disc !ml-8;
+}
+
+.editor a {
+  @apply text-base text-link underline leading-[1.375rem] -tracking-[0.02rem];
+}
+
+.editor blockquote {
+  @apply !ml-4 pl-4 !border-l !border-solid !border-l-primary;
+}
+
+.editor blockquote p {
+  @apply font-light text-base leading-[1.4rem] -tracking-[0.02rem] !text-grayMd;
+}
+
+.editor div[data-file] > img {
+  @apply w-full h-[21rem] object-cover rounded-lg bg-body bg-opacity-30;
+}
+
+.editor video {
+  @apply w-full h-[21rem] object-cover;
+}

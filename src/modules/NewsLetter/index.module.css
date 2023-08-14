@@ -1,0 +1,7 @@
+.masked {
+  mask-image: #7f56d9;
+  background: linear-gradient(to left, #7f56d9, transparent);
+  mask-repeat: repeat-x;
+  width: 100px;
+  height: 10px;
+}
